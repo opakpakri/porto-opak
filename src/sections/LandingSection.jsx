@@ -1,5 +1,3 @@
-// src/sections/LandingSection.jsx
-
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { useThemeLanguage } from "../context/ThemeLanguageContext";
@@ -23,9 +21,9 @@ const LandingSection = ({ id }) => {
   const [text] = useTypewriter({
     words: [
       getText("UI/UX Designer", "UI/UX Designer"),
-      getText("Web Developer", "Web Developer"),
-      getText("Freelancer", "Freelancer"),
-      getText("JOKI Games", "JOKI Game"),
+      getText("Web Developer", "Pengembang Web"),
+      getText("Freelancer", "Pekerja Lepas"),
+      getText("JOKI Games", "Joki Game"),
     ],
     loop: true,
     typeSpeed: 70,
@@ -40,30 +38,46 @@ const LandingSection = ({ id }) => {
     >
       <div className="container mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
         <div className="flex flex-col justify-center order-2 md:order-1 md:col-span-3">
-          <span className="inline-block bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium px-4 py-1.5 rounded-full mb-6 max-w-fit shadow-sm">
+          <span
+            data-aos="fade-up"
+            data-aos-delay="0"
+            className="inline-block bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium px-4 py-1.5 rounded-full mb-6 max-w-fit shadow-sm"
+          >
             {getText(
               "Available for freelance work",
               "Tersedia untuk proyek lepas"
             )}
           </span>
-
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-2">
+          <h1
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-2"
+          >
             {getText("Hi, I'm Opak", "Hai, Saya Opak")}
           </h1>
-
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-800 dark:text-gray-200 mb-8">
+          <h2
+            data-aos="fade-up"
+            data-aos-delay="200"
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-800 dark:text-gray-200 mb-8"
+          >
             {text}
             <Cursor cursorStyle="|" cursorColor="#111827" />
           </h2>
-
-          <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8">
+          <p
+            data-aos="fade-up"
+            data-aos-delay="300"
+            className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8"
+          >
             {getText(
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor ex id pulvinar sodales. Fusce suscipit tempor odio, vel porttitor tellus commodo eu. Mauris vehicula nisl in est aliquet ultricies. Fusce ornare lobortis metus, eu malesuada leo volutpat.",
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor ex id pulvinar sodales. Fusce suscipit tempor odio, vel porttitor tellus commodo eu. Mauris vehicula nisl in est aliquet ultricies. Fusce ornare lobortis metus, eu malesuada leo volutpat."
             )}
           </p>
-
-          <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-8 mb-10 text-gray-700 dark:text-gray-300">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="400"
+            className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-8 mb-10 text-gray-700 dark:text-gray-300"
+          >
             <div className="flex items-center space-x-2">
               <FaMapMarkerAlt className="text-lg text-gray-500" />
               <span className="text-base">
@@ -77,8 +91,11 @@ const LandingSection = ({ id }) => {
               </span>
             </div>
           </div>
-
-          <div className="flex space-x-4 mb-10 max-w-lg">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="500"
+            className="flex space-x-4 mb-10 max-w-lg"
+          >
             <a
               href="#contact"
               className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 border border-gray-900 dark:border-white font-semibold py-3 px-7 rounded-lg flex items-center justify-center space-x-3 transition-colors duration-300 shadow-md"
@@ -86,7 +103,6 @@ const LandingSection = ({ id }) => {
               <FaArrowRight className="text-lg" />
               <span>{getText("Hire Me", "Rekrut Saya")}</span>
             </a>
-
             <a
               href="/dummycv.pdf"
               download
@@ -96,10 +112,16 @@ const LandingSection = ({ id }) => {
               <span>{getText("Download CV", "Unduh CV")}</span>
             </a>
           </div>
-
-          <hr className="border-t border-gray-200 dark:border-gray-700 w-full mb-8" />
-
-          <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6 text-gray-700 dark:text-gray-300">
+          <hr
+            data-aos="fade-up"
+            data-aos-delay="600"
+            className="border-t border-gray-200 dark:border-gray-700 w-full mb-8"
+          />
+          <div
+            data-aos="fade-up"
+            data-aos-delay="700"
+            className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6 text-gray-700 dark:text-gray-300"
+          >
             <span className="font-semibold text-gray-800 dark:text-gray-200">
               {getText("Follow me:", "Ikuti saya:")}
             </span>
@@ -147,8 +169,11 @@ const LandingSection = ({ id }) => {
             </div>
           </div>
         </div>
-
-        <div className="flex justify-center items-center order-1 md:order-2 md:col-span-2 p-0 md:p-0">
+        <div
+          data-aos="fade-left"
+          data-aos-delay="200"
+          className="flex justify-center items-center order-1 md:order-2 md:col-span-2 p-0 md:p-0"
+        >
           <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-xl">
             <img
               src={profileImageUrl}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useThemeLanguage } from "../context/ThemeLanguageContext";
 import {
   FaHome,
@@ -9,6 +9,8 @@ import {
   FaGlobe,
   FaSun,
   FaMoon,
+  FaBars,
+  FaTimes,
 } from "react-icons/fa";
 
 const iconMap = {
@@ -19,6 +21,7 @@ const iconMap = {
   Contact: FaEnvelope,
 };
 
+// ... (ThemeToggle component tetap sama) ...
 const ThemeToggle = ({ isDark, onToggle }) => (
   <div
     onClick={onToggle}
@@ -52,20 +55,35 @@ function Navbar() {
     navItems,
   } = useThemeLanguage();
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const handleScroll = (href) => {
     const element = document.getElementById(href.substring(1));
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
   };
 
   return (
-    <nav className="fixed w-full flex justify-center top-8 z-[100] px-4">
-      <div
-        className="bg-white dark:bg-gray-800 backdrop-filter backdrop-blur-lg bg-opacity-100 dark:bg-opacity-70 rounded-full p-3 shadow-2xl border border-gray-200 dark:border-gray-700 max-w-screen-md w-full flex justify-between items-center space-x-2 transition-colors duration-500" /* 🎯 DIUBAH KE duration-500 */
-      >
-        {/* Tautan Navigasi */}
-        <div className="flex space-x-2">
+    <nav className="fixed w-full flex justify-center top-8 z-100 px-4">
+      <div className="bg-white dark:bg-gray-800 z-100 backdrop-filter backdrop-blur-lg bg-opacity-100 dark:bg-opacity-70 rounded-full p-3 shadow-2xl border border-gray-200 dark:border-gray-700 max-w-screen-md w-full flex justify-between items-center space-x-2 transition-colors duration-500">
+        <button
+          className={`
+            text-gray-600 dark:text-gray-300 text-xl p-2 rounded-full sm:hidden 
+            transform transition-transform duration-300 ease-in-out
+            ${isMenuOpen ? "rotate-180" : "rotate-0"}
+          `}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle navigation"
+        >
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
+        {/* Tautan Navigasi (Desktop Default) */}
+        <div className="hidden sm:flex space-x-2">
           {navItems.map((item) => {
             const IconComponent = iconMap[item.name];
             return (
@@ -102,6 +120,46 @@ function Navbar() {
 
           {/* Light/Dark Mode Toggle */}
           <ThemeToggle isDark={isDarkMode} onToggle={toggleTheme} />
+        </div>
+      </div>
+
+      {/* 🎯 DROPDOWN MENU MOBILE: HANYA IKON, SEMPIT, SEJAJAR KIRI */}
+      <div
+        className={`
+          fixed top-16 left-4 p-2 pt-10 transition-all duration-300 ease-in-out transform
+          bg-white dark:bg-gray-800 rounded-b-xl shadow-2xl border border-gray-200 dark:border-gray-700
+          ${
+            isMenuOpen
+              ? "translate-y-0 opacity-100"
+              : "-translate-y-4 opacity-0 pointer-events-none"
+          }
+          sm:hidden w-16 // 🎯 Width minimal untuk ikon
+      `}
+      >
+        <div className="flex flex-col space-y-3 items-center">
+          {navItems.map((item) => {
+            const IconComponent = iconMap[item.name];
+            return (
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleScroll(item.href);
+                }}
+                className={`
+                            flex justify-center w-full py-3 rounded-lg 
+                            ${
+                              activeSection === item.name
+                                ? "bg-black text-white dark:bg-white dark:text-gray-900"
+                                : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                            }
+                          `}
+              >
+                <IconComponent className="text-xl" />
+              </a>
+            );
+          })}
         </div>
       </div>
     </nav>

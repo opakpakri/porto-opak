@@ -32,7 +32,7 @@ function ContactSection({ id }) {
       setIsSubmitted(false);
       e.target.reset();
     }, 5000);
-  }; // Pesan Sukses yang dihardcode ke Bahasa Inggris (sesuai permintaan)
+  };
 
   const successMessage = "Message Sent Successfully, Thank You!";
 
@@ -43,24 +43,41 @@ function ContactSection({ id }) {
     >
       <div className="container mx-auto max-w-6xl">
         <div className="mb-16 text-center">
-          <p className="text-sm font-semibold text-gray-500 tracking-widest uppercase mb-2">
+          <p
+            data-aos="fade-up"
+            className="text-sm font-semibold text-gray-500 tracking-widest uppercase mb-2"
+          >
             {getText("CONTACT", "KONTAK")}
           </p>
-          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+          <h2
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="text-4xl md:text-5xl font-extrabold leading-tight mb-4"
+          >
             {getText("Get in Touch with Us", "Hubungi Kami")}
           </h2>
-          <div className="w-16 h-1 bg-gray-900 dark:bg-white mx-auto mt-4"></div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="150"
+            className="w-16 h-1 bg-gray-900 dark:bg-white mx-auto mt-4"
+          ></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
-          {/* KOLOM KIRI: Detail Kontak (60%) */}
-          <div className="md:col-span-3 flex flex-col space-y-8">
+          <div
+            data-aos="fade-right"
+            className="md:col-span-3 flex flex-col space-y-8"
+          >
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-md">
               {getText(
                 "I'm always open to discuss exciting projects and new opportunities. Let's collaborate!",
                 "Saya selalu terbuka untuk mendiskusikan proyek menarik dan peluang baru. Mari berkolaborasi!"
               )}
             </p>
-            <div className="space-y-4">
+            <div
+              data-aos="fade-right"
+              data-aos-delay="100"
+              className="space-y-4"
+            >
               {contactDetails.map((item, index) => (
                 <a
                   key={index}
@@ -74,7 +91,11 @@ function ContactSection({ id }) {
                 </a>
               ))}
             </div>
-            <div className="flex space-x-4 pt-4">
+            <div
+              data-aos="fade-right"
+              data-aos-delay="200"
+              className="flex space-x-4 pt-4"
+            >
               <a
                 href="https://github.com/opakpakri"
                 target="_blank"
@@ -117,7 +138,11 @@ function ContactSection({ id }) {
               </a>
             </div>
           </div>
-          <div className="md:col-span-2 w-full">
+          <div
+            data-aos="fade-left"
+            data-aos-delay="200"
+            className="md:col-span-2 w-full"
+          >
             <form onSubmit={handleSubmit} className="space-y-4">
               {isSubmitted && (
                 <div className="p-3 mb-4 text-sm font-medium text-green-800 bg-green-100 dark:text-green-200 dark:bg-green-700 rounded-lg text-center">

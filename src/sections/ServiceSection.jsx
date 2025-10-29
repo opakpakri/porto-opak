@@ -6,7 +6,6 @@ import pict4 from "../assets/images/pict4.webp";
 import pict5 from "../assets/images/pict5.webp";
 import pict6 from "../assets/images/pict6.webp";
 
-// Data layanan menggunakan fungsi getText
 const servicesDataEN = [
   {
     title: "Web Development",
@@ -26,7 +25,7 @@ const servicesDataEN = [
       "Analyzing data to provide actionable insights for business growth.",
   },
   {
-    title: "JOKI Games",
+    title: "Game Boosting",
     image: pict6,
     description:
       "Providing professional game boosting and achievement services.",
@@ -52,36 +51,51 @@ const servicesDataID = [
       "Menganalisis data untuk memberikan wawasan yang dapat ditindaklanjuti untuk pertumbuhan bisnis.",
   },
   {
-    title: "JOKI Game",
+    title: "Joki Game",
     image: pict6,
     description:
       "Menyediakan layanan pendorong permainan profesional dan pencapaian.",
   },
 ];
 
-const ServiceCard = ({ service }) => (
-  <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden transition duration-300 hover:shadow-xl">
-    <div className="h-48 overflow-hidden p-6 bg-white dark:bg-gray-800 flex justify-center items-center">
-      <img
-        src={service.image}
-        alt={service.title}
-        className="w-full h-full object-contain rounded-lg"
-      />
+const ServiceCard = ({ service }) => {
+  const { getText } = useThemeLanguage();
+  return (
+    <div
+      data-aos="fade-up"
+      data-aos-delay="100"
+      className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden transition duration-300 hover:shadow-xl"
+    >
+      <div className="h-48 overflow-hidden p-6 bg-white dark:bg-gray-800 flex justify-center items-center">
+        <img
+          src={service.image}
+          alt={service.title_en}
+          className="w-full h-full object-contain rounded-lg"
+        />
+      </div>
+      <div className="pr-6 pl-6 pb-6 text-center">
+        <h3 className="text-xl font-extrabold text-blue-700 dark:text-blue-400 mb-3">
+          {getText(service.title_en, service.title_id)}
+        </h3>
+        <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+          {getText(service.description_en, service.description_id)}
+        </p>
+      </div>
     </div>
-    <div className="pr-6 pl-6 pb-6 text-center">
-      <h3 className="text-xl font-extrabold text-blue-700 dark:text-blue-400 mb-3">
-        {service.title}
-      </h3>
-      <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-        {service.description}
-      </p>
-    </div>
-  </div>
-);
+  );
+};
 
 function ServiceSection({ id }) {
   const { getText, language } = useThemeLanguage();
   const currentData = language === "EN" ? servicesDataEN : servicesDataID;
+
+  const mappedData = currentData.map((item, index) => ({
+    ...item,
+    title_en: servicesDataEN[index].title,
+    title_id: servicesDataID[index].title,
+    description_en: servicesDataEN[index].description,
+    description_id: servicesDataID[index].description,
+  }));
 
   return (
     <section
@@ -90,17 +104,28 @@ function ServiceSection({ id }) {
     >
       <div className="container mx-auto max-w-6xl">
         <div className="mb-16 text-center">
-          <p className="text-sm font-semibold text-gray-500 tracking-widest uppercase mb-2">
+          <p
+            data-aos="fade-up"
+            className="text-sm font-semibold text-gray-500 tracking-widest uppercase mb-2"
+          >
             {getText("SERVICES", "LAYANAN")}
           </p>
-          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+          <h2
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4"
+          >
             {getText("Our Features & Services", "Fitur & Layanan Kami")}
           </h2>
-          <div className="w-16 h-1 bg-gray-900 dark:bg-white mx-auto mt-4"></div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="150"
+            className="w-16 h-1 bg-gray-900 dark:bg-white mx-auto mt-4"
+          ></div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {currentData.map((service, index) => (
+          {mappedData.map((service, index) => (
             <ServiceCard key={index} service={service} />
           ))}
         </div>

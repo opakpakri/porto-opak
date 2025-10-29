@@ -28,7 +28,7 @@ function Footer() {
 
         {/* Navigasi */}
         <nav className="mb-8">
-          <ul className="flex justify-center space-x-6 md:space-x-10 text-lg font-medium">
+          <ul className="flex flex-wrap justify-center space-x-4 md:space-x-10 text-sm md:text-lg font-medium">
             {navItems.map((link) => (
               <li key={link.name}>
                 <a

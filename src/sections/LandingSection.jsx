@@ -170,7 +170,7 @@ const LandingSection = ({ id }) => {
           </div>
         </div>
         <div
-          data-aos="fade-left"
+          data-aos="fade-up"
           data-aos-delay="200"
           className="flex justify-center items-center order-1 md:order-2 md:col-span-2 p-0 md:p-0"
         >

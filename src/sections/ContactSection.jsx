@@ -64,7 +64,7 @@ function ContactSection({ id }) {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
           <div
-            data-aos="fade-right"
+            data-aos="fade-up"
             className="md:col-span-3 flex flex-col space-y-8"
           >
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-md">
@@ -73,11 +73,7 @@ function ContactSection({ id }) {
                 "Saya selalu terbuka untuk mendiskusikan proyek menarik dan peluang baru. Mari berkolaborasi!"
               )}
             </p>
-            <div
-              data-aos="fade-right"
-              data-aos-delay="100"
-              className="space-y-4"
-            >
+            <div data-aos="fade-up" data-aos-delay="100" className="space-y-4">
               {contactDetails.map((item, index) => (
                 <a
                   key={index}
@@ -92,7 +88,7 @@ function ContactSection({ id }) {
               ))}
             </div>
             <div
-              data-aos="fade-right"
+              data-aos="fade-up"
               data-aos-delay="200"
               className="flex space-x-4 pt-4"
             >
@@ -139,7 +135,7 @@ function ContactSection({ id }) {
             </div>
           </div>
           <div
-            data-aos="fade-left"
+            data-aos="fade-up"
             data-aos-delay="200"
             className="md:col-span-2 w-full"
           >

@@ -113,7 +113,7 @@ function AboutSection({ id }) {
             </div>
           </div>
           <div
-            data-aos="fade-left"
+            data-aos="fade-up"
             data-aos-delay="400"
             className="flex justify-center md:justify-end md:col-span-2 w-full mt-8 md:mt-[165px]"
           >

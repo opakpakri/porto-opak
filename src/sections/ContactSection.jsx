@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import { useThemeLanguage } from "../context/ThemeLanguageContext";
 import {
   FaEnvelope,
@@ -15,26 +16,38 @@ const contactDetails = [
   {
     icon: FaEnvelope,
     text: "aufakhrhitw@gmail.com",
-    link: "mailto:aufakhrhitw@gmail.com",
   },
-  { icon: FaPhone, text: "+62 812 8388 2607", link: "tel:+6281283882607" },
-  { icon: FaMapMarkerAlt, text: "Jakarta, Indonesia", link: "#" },
+  { icon: FaPhone, text: "+62 812 8388 2607" },
+  { icon: FaMapMarkerAlt, text: "Jakarta, Indonesia" },
 ];
 
 function ContactSection({ id }) {
   const { getText } = useThemeLanguage();
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      e.target.reset();
-    }, 5000);
-  };
+  const formRef = useRef(null);
+  const [state, handleSubmit] = useForm("mwpwqwra");
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const successMessage = "Message Sent Successfully, Thank You!";
+
+  useEffect(() => {
+    let timer;
+    if (state.succeeded) {
+      if (formRef.current) {
+        formRef.current.reset();
+      }
+
+      setShowSuccess(true);
+
+      timer = setTimeout(() => {
+        setShowSuccess(false);
+      }, 3000);
+    }
+
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [state.succeeded]);
 
   return (
     <section
@@ -77,10 +90,8 @@ function ContactSection({ id }) {
               {contactDetails.map((item, index) => (
                 <a
                   key={index}
-                  href={item.link}
-                  target={item.link !== "#" ? "_blank" : "_self"}
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-4 text-lg text-gray-800 dark:text-gray-300 hover:text-blue-600 transition-colors"
+                  className="flex items-center space-x-4 text-lg text-gray-800 dark:text-gray-300  "
                 >
                   {<item.icon className="text-xl text-gray-500" />}
                   <span>{item.text}</span>
@@ -139,15 +150,16 @@ function ContactSection({ id }) {
             data-aos-delay="200"
             className="md:col-span-2 w-full"
           >
-            <form onSubmit={handleSubmit} className="space-y-4">
-              {isSubmitted && (
-                <div className="p-3 mb-4 text-sm font-medium text-green-800 bg-green-100 dark:text-green-200 dark:bg-green-700 rounded-lg text-center">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+              {showSuccess && (
+                <div className="p-3 mb-4 text-sm font-medium text-green-800 bg-green-100 dark:text-green-200 dark:bg-green-700 rounded-lg text-center transition-opacity duration-300 opacity-100">
                   {successMessage}
                 </div>
               )}
               <input
                 type="text"
                 name="name"
+                id="name"
                 placeholder={getText("Your Name", "Nama Anda")}
                 className="w-full p-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-150"
                 required
@@ -155,22 +167,39 @@ function ContactSection({ id }) {
               <input
                 type="email"
                 name="email"
+                id="email"
                 placeholder={getText("Your Email", "Email Anda")}
                 className="w-full p-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-150"
                 required
               />
+              <ValidationError
+                prefix="Email"
+                field="email"
+                errors={state.errors}
+                className="text-red-500 text-sm"
+              />
               <textarea
                 name="message"
+                id="message"
                 placeholder={getText("Your Message", "Pesan Anda")}
                 rows="6"
                 className="w-full p-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-150 resize-none"
                 required
               ></textarea>
+              <ValidationError
+                prefix="Message"
+                field="message"
+                errors={state.errors}
+                className="text-red-500 text-sm"
+              />
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md"
+                disabled={state.submitting}
+                className="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md disabled:opacity-50"
               >
-                {getText("Send Message", "Kirim Pesan")}
+                {state.submitting
+                  ? getText("Sending...", "Mengirim...")
+                  : getText("Send Message", "Kirim Pesan")}
               </button>
             </form>
           </div>

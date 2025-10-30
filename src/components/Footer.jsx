@@ -8,6 +8,15 @@ import {
 } from "react-icons/fa";
 import { useThemeLanguage } from "../context/ThemeLanguageContext";
 
+const handleSmoothScroll = (e, href) => {
+  e.preventDefault();
+  const id = href.substring(1);
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 function Footer() {
   const { navItems, getText } = useThemeLanguage();
 
@@ -33,6 +42,7 @@ function Footer() {
               <li key={link.name}>
                 <a
                   href={link.href}
+                  onClick={(e) => handleSmoothScroll(e, link.href)}
                   className="hover:text-gray-400 transition-colors duration-200"
                 >
                   {getText(link.text_en, link.text_id)}

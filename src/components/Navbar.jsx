@@ -21,7 +21,6 @@ const iconMap = {
   Contact: FaEnvelope,
 };
 
-// ... (ThemeToggle component tetap sama) ...
 const ThemeToggle = ({ isDark, onToggle }) => (
   <div
     onClick={onToggle}
@@ -82,7 +81,6 @@ function Navbar() {
           {isMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
 
-        {/* Tautan Navigasi (Desktop Default) */}
         <div className="hidden sm:flex space-x-2">
           {navItems.map((item) => {
             const IconComponent = iconMap[item.name];
@@ -107,9 +105,7 @@ function Navbar() {
           })}
         </div>
 
-        {/* Bahasa dan Dark Mode Toggle */}
         <div className="flex items-center space-x-3">
-          {/* Tombol Bahasa */}
           <div
             onClick={toggleLanguage}
             className="flex items-center space-x-1 cursor-pointer text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors"
@@ -118,12 +114,10 @@ function Navbar() {
             <span className="font-bold">{language}</span>
           </div>
 
-          {/* Light/Dark Mode Toggle */}
           <ThemeToggle isDark={isDarkMode} onToggle={toggleTheme} />
         </div>
       </div>
 
-      {/* 🎯 DROPDOWN MENU MOBILE: HANYA IKON, SEMPIT, SEJAJAR KIRI */}
       <div
         className={`
           fixed top-16 left-4 p-2 pt-10 transition-all duration-300 ease-in-out transform
@@ -133,7 +127,7 @@ function Navbar() {
               ? "translate-y-0 opacity-100"
               : "-translate-y-4 opacity-0 pointer-events-none"
           }
-          sm:hidden w-16 // 🎯 Width minimal untuk ikon
+          sm:hidden w-16 
       `}
       >
         <div className="flex flex-col space-y-3 items-center">
@@ -147,14 +141,11 @@ function Navbar() {
                   e.preventDefault();
                   handleScroll(item.href);
                 }}
-                className={`
-                            flex justify-center w-full py-3 rounded-lg 
-                            ${
-                              activeSection === item.name
-                                ? "bg-black text-white dark:bg-white dark:text-gray-900"
-                                : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-                            }
-                          `}
+                className={`flex justify-center w-full py-3 rounded-lg ${
+                  activeSection === item.name
+                    ? "bg-black text-white dark:bg-white dark:text-gray-900"
+                    : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                }`}
               >
                 <IconComponent className="text-xl" />
               </a>

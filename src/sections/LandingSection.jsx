@@ -15,6 +15,15 @@ import {
 
 import profileImage from "../assets/images/pict1.webp";
 
+const handleSmoothScroll = (e, href) => {
+  e.preventDefault();
+  const id = href.substring(1);
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 const LandingSection = ({ id }) => {
   const { getText } = useThemeLanguage();
   const profileImageUrl = profileImage;
@@ -98,10 +107,11 @@ const LandingSection = ({ id }) => {
           >
             <a
               href="#contact"
+              onClick={(e) => handleSmoothScroll(e, "#contact")}
               className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 border border-gray-900 dark:border-white font-semibold py-3 px-7 rounded-lg flex items-center justify-center space-x-3 transition-colors duration-300 shadow-md"
             >
               <FaArrowRight className="text-lg" />
-              <span>{getText("Hire Me", "Rekrut Saya")}</span>
+              <span>{getText("Contact Me", "Kontak Saya")}</span>
             </a>
             <a
               href="/dummycv.pdf"

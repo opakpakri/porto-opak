@@ -66,6 +66,17 @@ function Footer() {
         </div>
 
         <p className="text-sm text-gray-400">© 2025 Opak All Rights Reserved</p>
+        <p className="text-xs text-gray-500 mt-1">
+          Inspired by{" "}
+          <a
+            href="https://www.instagram.com/amine__codes/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            @amine__codes
+          </a>
+        </p>
       </div>
     </footer>
   );

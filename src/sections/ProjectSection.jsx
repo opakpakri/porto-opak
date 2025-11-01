@@ -80,7 +80,7 @@ const ProjectCard = ({ project, delay }) => {
     <div
       data-aos="fade-up"
       data-aos-delay={delay}
-      className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl"
+      className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:-translate-y-2"
     >
       <div className="h-56 p-4 bg-gray-100 dark:bg-gray-700 overflow-hidden rounded-t-xl flex justify-center items-center">
         <img

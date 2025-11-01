@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 import { ThemeLanguageProvider } from "./context/ThemeLanguageContext";
 
 import ClickSpark from "./components/ClickSpark";
@@ -23,6 +24,7 @@ function App() {
           <Navbar />
           <Home />
           <Footer />
+          <ScrollToTopButton />
         </div>
       </ClickSpark>
     </ThemeLanguageProvider>

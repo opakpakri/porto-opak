@@ -78,10 +78,11 @@ const LandingSection = ({ id }) => {
             className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8"
           >
             {getText(
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor ex id pulvinar sodales. Fusce suscipit tempor odio, vel porttitor tellus commodo eu. Mauris vehicula nisl in est aliquet ultricies. Fusce ornare lobortis metus, eu malesuada leo volutpat.",
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor ex id pulvinar sodales. Fusce suscipit tempor odio, vel porttitor tellus commodo eu. Mauris vehicula nisl in est aliquet ultricies. Fusce ornare lobortis metus, eu malesuada leo volutpat."
+              "I am a dedicated Freelancer with 2+ years of experience, specializing in creating high-quality, user-friendly digital solutions. I ensure that every project is built with clean code and provides a smooth and responsive experience across all devices.",
+              "Saya adalah seorang Freelancer berdedikasi dengan 2+ tahun pengalaman, berspesialisasi dalam menciptakan solusi digital berkualitas yang ramah pengguna. Saya memastikan setiap proyek dibangun dengan kode bersih dan memberikan pengalaman yang mulus dan responsif bagi semua pengguna."
             )}
           </p>
+
           <div
             data-aos="fade-up"
             data-aos-delay="400"

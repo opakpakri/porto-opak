@@ -9,7 +9,6 @@ export const ThemeLanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState("EN");
   const [activeSection, setActiveSection] = useState("Home");
 
-  // 1. KONTROL TEMA: Mengubah class 'dark' di <html>
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
@@ -18,15 +17,12 @@ export const ThemeLanguageProvider = ({ children }) => {
     }
   }, [isDarkMode]);
 
-  // 2. FUNGSI TOGGLE
   const toggleTheme = () => setIsDarkMode((prev) => !prev);
   const toggleLanguage = () =>
     setLanguage((prev) => (prev === "EN" ? "ID" : "EN"));
 
-  // 3. FUNGSI PENERJEMAH (Helper)
   const getText = (text_en, text_id) => (language === "EN" ? text_en : text_id);
 
-  // 4. DATA NAVIGASI (Dengan teks multibahasa)
   const navItems = [
     { name: "Home", href: "#home", text_en: "Home", text_id: "Beranda" },
     { name: "About", href: "#about", text_en: "About", text_id: "Tentang" },

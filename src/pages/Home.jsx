@@ -9,11 +9,9 @@ import ContactSection from "../sections/ContactSection";
 const Home = () => {
   const { setActiveSection, navItems } = useThemeLanguage();
 
-  // Intersection Observer untuk Scroll Tracking
   useEffect(() => {
     const observerOptions = {
       root: null,
-      // Deteksi ketika section mencapai 50% dari viewport
       rootMargin: "0px 0px -50% 0px",
       threshold: 0.1,
     };
@@ -43,11 +41,9 @@ const Home = () => {
     return () => observer.disconnect();
   }, [navItems, setActiveSection]);
 
-  // ID pada setiap Section SANGAT PENTING untuk Observer
   return (
     <div className="">
       {" "}
-      {/* Tambah padding atas agar tidak tertutup navbar */}
       <main>
         <LandingSection id="home" />
         <AboutSection id="about" />

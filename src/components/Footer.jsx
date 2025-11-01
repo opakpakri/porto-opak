@@ -35,7 +35,6 @@ function Footer() {
           <h3 className="text-3xl font-extrabold tracking-wider">Opak</h3>
         </div>
 
-        {/* Navigasi */}
         <nav className="mb-8">
           <ul className="flex flex-wrap justify-center space-x-4 md:space-x-10 text-sm md:text-lg font-medium">
             {navItems.map((link) => (
@@ -52,7 +51,6 @@ function Footer() {
           </ul>
         </nav>
 
-        {/* Ikon Media Sosial */}
         <div className="flex justify-center space-x-6 mb-8">
           {socialLinks.map((link, index) => (
             <a

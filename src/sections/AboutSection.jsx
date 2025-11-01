@@ -29,7 +29,7 @@ function AboutSection({ id }) {
     {
       Icon: FaCode,
       title: getText("Languages", "Bahasa Pemrograman"),
-      content: "HTML, CSS, JavaScript, XML, C, React",
+      content: "HTML, CSS, JavaScript, XML, C, React, Express",
     },
     {
       Icon: FaGraduationCap,
@@ -80,8 +80,8 @@ function AboutSection({ id }) {
               className="text-gray-600 dark:text-gray-400 text-base leading-relaxed"
             >
               {getText(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor ex id pulvinar sodales. Fusce suscipit tempor odio, vel porttitor tellus commodo eu. Mauris vehicula nisl in est aliquet ultricies. Fusce ornare lobortis metus, eu malesuada leo volutpat. Suspendisse vestibulum vulputate ante eget ornare. Nam venenatis, tellus id maximus porta, neque massa congue lacus, nec feugiat dolor mauris ut erat.",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor ex id pulvinar sodales. Fusce suscipit tempor odio, vel porttitor tellus commodo eu. Mauris vehicula nisl in est aliquet ultricies. Fusce ornare lobortis metus, eu malesuada leo volutpat. Suspendisse vestibulum vulputate ante eget ornare. Nam venenatis, tellus id maximus porta, neque massa congue lacus, nec feugiat dolor mauris ut erat."
+                "I began my journey in digital development roughly 2 years ago, driven by my passion for creating functional and beautiful interfaces. My expertise includes UI/UX Design, mobile development, and modern web frameworks. I believe that good development starts with clean architecture, leading to products that are easy to maintain and scale.",
+                "Saya memulai perjalanan saya dalam pengembangan digital sekitar 2 tahun yang lalu, didorong oleh minat untuk menciptakan antarmuka yang fungsional dan indah. Keahlian saya mencakup Desain UI/UX, pengembangan mobile, dan web frameworks modern. Saya percaya bahwa pengembangan yang baik dimulai dengan arsitektur yang bersih, menghasilkan produk yang mudah dipelihara dan diskalakan."
               )}
             </p>
             <p
@@ -90,8 +90,8 @@ function AboutSection({ id }) {
               className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-6"
             >
               {getText(
-                "Cras scelerisque elementum tincidunt. Phasellus tempus ac dolor ac volutpat. Etiam dui felis, viverra eu pulvinar at, imperdiet eget dolor. Aliquam scelerisque elementum vestibulum. In aliquet dolor ac iaculis varius.h",
-                "Cras scelerisque elementum tincidunt. Phasellus tempus ac dolor ac volutpat. Etiam dui felis, viverra eu pulvinar at, imperdiet eget dolor. Aliquam scelerisque elementum vestibulum. In aliquet dolor ac iaculis varius.h"
+                "My primary goal is always user satisfaction. By focusing on simple navigation and responsive design, I ensure that the final product is not only robust but also a pleasure to use. My commitment to writing clean code guarantees efficiency and longevity for your project.",
+                "Tujuan utama saya selalu adalah kepuasan pengguna. Dengan berfokus pada navigasi yang sederhana dan desain yang responsif, saya memastikan produk akhir tidak hanya kokoh, tetapi juga menyenangkan untuk digunakan. Komitmen saya pada penulisan kode yang bersih menjamin efisiensi dan umur panjang bagi proyek Anda."
               )}
             </p>
             <h3

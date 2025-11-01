@@ -13,7 +13,7 @@ const servicesDataEN = [
     description: "Modern online store development using React and Tailwind.",
   },
   {
-    title: "App Development",
+    title: "Mobile Development",
     image: pict4,
     description:
       "Developing mobile applications using cross-platform frameworks.",
@@ -64,7 +64,7 @@ const ServiceCard = ({ service }) => {
     <div
       data-aos="fade-up"
       data-aos-delay="100"
-      className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden transition duration-300 hover:shadow-xl"
+      className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden transition duration-300 hover:shadow-xl hover:-translate-y-2"
     >
       <div className="h-48 overflow-hidden p-6 bg-white dark:bg-gray-800 flex justify-center items-center">
         <img

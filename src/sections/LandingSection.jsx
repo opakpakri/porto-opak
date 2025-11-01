@@ -31,8 +31,8 @@ const LandingSection = ({ id }) => {
     words: [
       getText("UI/UX Designer", "UI/UX Designer"),
       getText("Web Developer", "Pengembang Web"),
+      getText("Mobile Developer", "Pengembang Mobile"),
       getText("Freelancer", "Pekerja Lepas"),
-      getText("JOKI Games", "Joki Game"),
     ],
     loop: true,
     typeSpeed: 70,

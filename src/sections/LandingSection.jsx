@@ -117,7 +117,7 @@ const LandingSection = ({ id }) => {
             <a
               href="/CVAufaFakhri.pdf"
               download
-              className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white border border-gray-900 dark:border-white hover:bg-gray-900 hover:text-white  dark:hover:bg-white font-semibold py-3 px-7 rounded-lg flex items-center justify-center space-x-3 transition-colors duration-300 shadow-md"
+              className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white border border-gray-900 dark:border-white hover:bg-gray-900 hover:text-white  dark:hover:text-black dark:hover:bg-white font-semibold py-3 px-7 rounded-lg flex items-center justify-center space-x-3 transition-colors duration-300 shadow-md"
             >
               <FaDownload className="text-lg" />
               <span>{getText("Download CV", "Unduh CV")}</span>

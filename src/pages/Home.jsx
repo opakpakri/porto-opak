@@ -21,7 +21,7 @@ const Home = () => {
         if (entry.isIntersecting) {
           const sectionId = entry.target.getAttribute("id");
           const normalizedName = navItems.find(
-            (item) => item.href === `#${sectionId}`
+            (item) => item.href === `#${sectionId}`,
           )?.name;
           if (normalizedName) {
             setActiveSection(normalizedName);
@@ -30,7 +30,6 @@ const Home = () => {
       });
     }, observerOptions);
 
-    // Amati semua section
     navItems.forEach((item) => {
       const element = document.getElementById(item.href.substring(1));
       if (element) {

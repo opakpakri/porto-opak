@@ -2,7 +2,6 @@ import React from "react";
 import { FaGithub, FaArrowRight } from "react-icons/fa";
 import { useThemeLanguage } from "../context/ThemeLanguageContext";
 
-// Import gambar-gambar proyek
 import project1 from "../assets/images/project1.webp";
 import project6 from "../assets/images/project6.webp";
 import project2 from "../assets/images/project2.webp";
@@ -88,7 +87,6 @@ const projectsData = [
 ];
 
 const ProjectCard = ({ project, delay }) => {
-  // Menerima prop delay
   const { getText } = useThemeLanguage();
 
   const getTechClass = () => {
@@ -96,7 +94,6 @@ const ProjectCard = ({ project, delay }) => {
   };
 
   return (
-    // 🎯 AOS pada setiap kartu dengan delay bertahap
     <div
       data-aos="fade-up"
       data-aos-delay={delay}

@@ -10,7 +10,7 @@ import project4 from "../assets/images/project4.webp";
 import project3 from "../assets/images/project3.webp";
 import project5 from "../assets/images/project5.webp";
 import project7 from "../assets/images/project7.webp";
-// import project8 from "../assets/images/project8.webp";
+import project8 from "../assets/images/project8.webp";
 
 const projectsData = [
   {
@@ -75,6 +75,15 @@ const projectsData = [
     tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/opakpakri/CodingCamp-23Feb26-AufaFakhri",
     liveDemo: "https://miniproject-codingcamp-230226.vercel.app",
+  },
+  {
+    title: "Aetheria Grand",
+    image: project8,
+    description:
+      "Modern hotel booking website with responsive design and user-friendly interface.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/opakpakri/AetheriaGrand",
+    liveDemo: "https://aetheriagrand.vercel.app",
   },
 ];
 

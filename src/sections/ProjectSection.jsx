@@ -9,6 +9,8 @@ import project2 from "../assets/images/project2.webp";
 import project4 from "../assets/images/project4.webp";
 import project3 from "../assets/images/project3.webp";
 import project5 from "../assets/images/project5.webp";
+import project7 from "../assets/images/project7.webp";
+// import project8 from "../assets/images/project8.webp";
 
 const projectsData = [
   {
@@ -64,6 +66,15 @@ const projectsData = [
     tech: ["Kotlin", "XML"],
     github: "https://github.com/opakpakri/Github-User-Application",
     liveDemo: "https://livedemo.com/6",
+  },
+  {
+    title: "Revou Mini Project",
+    image: project7,
+    description:
+      "Simple company profile website as a mini project from CodingCamp Revou.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/opakpakri/CodingCamp-23Feb26-AufaFakhri",
+    liveDemo: "https://miniproject-codingcamp-230226.vercel.app",
   },
 ];
 
@@ -159,7 +170,7 @@ function ProjectSection({ id }) {
           >
             {getText(
               "A showcase of my recent projects demonstrating expertise in full-stack development modern frameworks and creative problem-solving",
-              "Sebuah pameran proyek terbaru saya yang menunjukkan keahlian dalam pengembangan full-stack, framework modern, dan pemecahan masalah kreatif"
+              "Sebuah pameran proyek terbaru saya yang menunjukkan keahlian dalam pengembangan full-stack, framework modern, dan pemecahan masalah kreatif",
             )}
           </p>
         </div>

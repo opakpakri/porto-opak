@@ -4,7 +4,7 @@ import { useThemeLanguage } from "../context/ThemeLanguageContext";
 import pict3 from "../assets/images/pict3.webp";
 import pict4 from "../assets/images/pict4.webp";
 import pict5 from "../assets/images/pict5.webp";
-// import pict6 from "../assets/images/pict6.webp";
+import pict6 from "../assets/images/pict6.webp";
 
 const servicesDataEN = [
   {
@@ -24,12 +24,12 @@ const servicesDataEN = [
     description:
       "Analyzing data to provide actionable insights for business growth.",
   },
-  // {
-  //   title: "Game Boosting",
-  //   image: pict6,
-  //   description:
-  //     "Providing professional game boosting and achievement services.",
-  // },
+  {
+    title: "Game Boosting",
+    image: pict6,
+    description:
+      "Providing professional game boosting and achievement services.",
+  },
 ];
 const servicesDataID = [
   {
@@ -50,12 +50,12 @@ const servicesDataID = [
     description:
       "Menganalisis data untuk memberikan wawasan yang dapat ditindaklanjuti untuk pertumbuhan bisnis.",
   },
-  // {
-  //   title: "Joki Game",
-  //   image: pict6,
-  //   description:
-  //     "Menyediakan layanan pendorong permainan profesional dan pencapaian.",
-  // },
+  {
+    title: "Joki Game",
+    image: pict6,
+    description:
+      "Menyediakan layanan pendorong permainan profesional dan pencapaian.",
+  },
 ];
 
 const ServiceCard = ({ service }) => {

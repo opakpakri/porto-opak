@@ -25,10 +25,9 @@ const servicesDataEN = [
       "Analyzing data to provide actionable insights for business growth.",
   },
   {
-    title: "Game Boosting",
+    title: "Unknown Service",
     image: pict6,
-    description:
-      "Providing professional game boosting and achievement services.",
+    description: "Unknown service description.",
   },
 ];
 const servicesDataID = [
@@ -51,10 +50,9 @@ const servicesDataID = [
       "Menganalisis data untuk memberikan wawasan yang dapat ditindaklanjuti untuk pertumbuhan bisnis.",
   },
   {
-    title: "Joki Game",
+    title: "Layanan Tidak Diketahui",
     image: pict6,
-    description:
-      "Menyediakan layanan pendorong permainan profesional dan pencapaian.",
+    description: "Deskripsi layanan tidak diketahui.",
   },
 ];
 

@@ -25,9 +25,10 @@ const servicesDataEN = [
       "Analyzing data to provide actionable insights for business growth.",
   },
   {
-    title: "Unknown Service",
+    title: "Software Development",
     image: pict6,
-    description: "Unknown service description.",
+    description:
+      "Developing high-quality software solutions for various industries.",
   },
 ];
 const servicesDataID = [
@@ -50,9 +51,10 @@ const servicesDataID = [
       "Menganalisis data untuk memberikan wawasan yang dapat ditindaklanjuti untuk pertumbuhan bisnis.",
   },
   {
-    title: "Layanan Tidak Diketahui",
+    title: "Pengembangan Perangkat Lunak",
     image: pict6,
-    description: "Deskripsi layanan tidak diketahui.",
+    description:
+      "Mengembangkan solusi perangkat lunak berkualitas tinggi untuk berbagai industri.",
   },
 ];
 

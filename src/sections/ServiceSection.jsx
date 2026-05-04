@@ -19,16 +19,16 @@ const servicesDataEN = [
       "Developing mobile applications using cross-platform frameworks.",
   },
   {
-    title: "Data Analyst",
+    title: "Software Developer",
     image: pict5,
     description:
-      "Analyzing data to provide actionable insights for business growth.",
+      "Developing high-quality software solutions for various industries.",
   },
   {
-    title: "Software Development",
+    title: "Data Analyst",
     image: pict6,
     description:
-      "Developing high-quality software solutions for various industries.",
+      "Analyzing data to provide actionable insights for business growth.",
   },
 ];
 const servicesDataID = [
@@ -45,16 +45,16 @@ const servicesDataID = [
       "Mengembangkan aplikasi mobile menggunakan framework lintas platform.",
   },
   {
-    title: "Analis Data",
+    title: "Pengembangan Perangkat Lunak",
     image: pict5,
     description:
-      "Menganalisis data untuk memberikan wawasan yang dapat ditindaklanjuti untuk pertumbuhan bisnis.",
+      "Mengembangkan solusi perangkat lunak berkualitas tinggi untuk berbagai industri.",
   },
   {
-    title: "Pengembangan Perangkat Lunak",
+    title: "Analis Data",
     image: pict6,
     description:
-      "Mengembangkan solusi perangkat lunak berkualitas tinggi untuk berbagai industri.",
+      "Menganalisis data untuk memberikan wawasan yang dapat ditindaklanjuti untuk pertumbuhan bisnis.",
   },
 ];
 

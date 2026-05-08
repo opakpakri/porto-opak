@@ -19,7 +19,7 @@ const servicesDataEN = [
       "Developing mobile applications using cross-platform frameworks.",
   },
   {
-    title: "Software Developer",
+    title: "Software Development",
     image: pict5,
     description:
       "Developing high-quality software solutions for various industries.",
